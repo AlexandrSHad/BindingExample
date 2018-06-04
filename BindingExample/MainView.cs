@@ -71,7 +71,7 @@ namespace BindingExample
             {
                 _dictionaries = value;
 
-                _userRolesBindingSource.DataSource = _dictionaries.Roles;
+                _userRolesBindingSource.DataSource = _dictionaries.Roles; // one source for all dictionaries
             }
         }
 
@@ -116,6 +116,31 @@ namespace BindingExample
         private void usersGridView_DoubleClick(object sender, EventArgs e)
         {
             _presenter.RunUserEdit();
+        }
+
+        private void MainView_Load(object sender, EventArgs e)
+        {
+            RadDateTimePickerCalendar calendarBehavior = birthDateDateTimePicker.DateTimePickerElement.GetCurrentBehavior() as RadDateTimePickerCalendar;
+            //RadCalendar calendar = calendarBehavior.Calendar as RadCalendar;
+
+            //calendar.ShowFooter = true;
+            //calendar.AllowMultipleView = true;
+            //calendar.AllowNavigation = false;
+            //calendar.ShowOtherMonthsDays = true;
+            //calendar.ShowRowHeaders = true;
+            //calendar.MonthLayout = MonthLayout.Layout_14columns_x_3rows;
+            //calendar.ZoomLevel = ZoomLevel.Years;
+            //calendar.NavigationNextText = "Text";
+            //calendar.HeaderNavigationMode = HeaderNavigationMode.Zoom;
+            //calendar.CalendarElement.CalendarStatusElement.LableFormat = "MM/dd/yyyy";
+
+            CalendarLocalizationProvider.CurrentProvider = new RadCalendarUkraineLocalizationProvider();
+
+            birthDateDateTimePicker.Culture = new System.Globalization.CultureInfo("uk-UA");
+            var calendar = birthDateDateTimePicker.DateTimePickerElement.Calendar;
+            calendar.ShowFooter = true;
+            calendar.HeaderNavigationMode = HeaderNavigationMode.Zoom;
+            //calendar.ZoomLevel = ZoomLevel.Years; // default
         }
     }
 }

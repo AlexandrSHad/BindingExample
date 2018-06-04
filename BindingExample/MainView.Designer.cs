@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn1 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
-            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDateTimeColumn gridViewDateTimeColumn3 = new Telerik.WinControls.UI.GridViewDateTimeColumn();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn3 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
             this.mainPageView = new Telerik.WinControls.UI.RadPageView();
             this.usersListPage = new Telerik.WinControls.UI.RadPageViewPage();
             this.usersGridView = new Telerik.WinControls.UI.RadGridView();
@@ -87,27 +87,27 @@
             // 
             // 
             this.usersGridView.MasterTemplate.AutoGenerateColumns = false;
-            gridViewTextBoxColumn1.FieldName = "Name";
-            gridViewTextBoxColumn1.HeaderText = "Name";
-            gridViewTextBoxColumn1.Name = "Name";
-            gridViewTextBoxColumn1.Width = 150;
-            gridViewDateTimeColumn1.CustomFormat = "dd/MM/yyyy";
-            gridViewDateTimeColumn1.FieldName = "BirthDate";
-            gridViewDateTimeColumn1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            gridViewDateTimeColumn1.FormatString = "{0:dd/MM/yyyy}";
-            gridViewDateTimeColumn1.HeaderText = "Birth date";
-            gridViewDateTimeColumn1.Name = "BirthDate";
-            gridViewDateTimeColumn1.Width = 100;
-            gridViewComboBoxColumn1.DataType = typeof(int);
-            gridViewComboBoxColumn1.FieldName = "RoleId";
-            gridViewComboBoxColumn1.HeaderText = "Role";
-            gridViewComboBoxColumn1.Name = "Role";
-            gridViewComboBoxColumn1.Width = 100;
+            gridViewTextBoxColumn3.FieldName = "Name";
+            gridViewTextBoxColumn3.HeaderText = "Name";
+            gridViewTextBoxColumn3.Name = "Name";
+            gridViewTextBoxColumn3.Width = 150;
+            gridViewDateTimeColumn3.CustomFormat = "dd/MM/yyyy";
+            gridViewDateTimeColumn3.FieldName = "BirthDate";
+            gridViewDateTimeColumn3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            gridViewDateTimeColumn3.FormatString = "{0:dd/MM/yyyy}";
+            gridViewDateTimeColumn3.HeaderText = "Birth date";
+            gridViewDateTimeColumn3.Name = "BirthDate";
+            gridViewDateTimeColumn3.Width = 100;
+            gridViewComboBoxColumn3.DataType = typeof(int);
+            gridViewComboBoxColumn3.FieldName = "RoleId";
+            gridViewComboBoxColumn3.HeaderText = "Role";
+            gridViewComboBoxColumn3.Name = "Role";
+            gridViewComboBoxColumn3.Width = 100;
             this.usersGridView.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewDateTimeColumn1,
-            gridViewComboBoxColumn1});
-            this.usersGridView.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            gridViewTextBoxColumn3,
+            gridViewDateTimeColumn3,
+            gridViewComboBoxColumn3});
+            this.usersGridView.MasterTemplate.ViewDefinition = tableViewDefinition3;
             this.usersGridView.Name = "usersGridView";
             this.usersGridView.Size = new System.Drawing.Size(610, 341);
             this.usersGridView.TabIndex = 0;
@@ -131,6 +131,7 @@
             // userInfoCtrl
             // 
             this.userInfoCtrl.DataSource = typeof(BindingExample.Core.Models.IUserModel);
+            this.userInfoCtrl.DataSourceRoles = null;
             this.userInfoCtrl.Location = new System.Drawing.Point(42, 172);
             this.userInfoCtrl.Name = "userInfoCtrl";
             this.userInfoCtrl.Size = new System.Drawing.Size(247, 80);
@@ -171,6 +172,7 @@
             this.birthDateDateTimePicker.TabIndex = 2;
             this.birthDateDateTimePicker.TabStop = false;
             this.birthDateDateTimePicker.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            ((Telerik.WinControls.UI.RadDateTimePickerElement)(this.birthDateDateTimePicker.GetChildAt(0))).Text = "";
             // 
             // nameTextBox
             // 
@@ -199,6 +201,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "RadForm1";
+            this.Load += new System.EventHandler(this.MainView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainPageView)).EndInit();
             this.mainPageView.ResumeLayout(false);
             this.usersListPage.ResumeLayout(false);

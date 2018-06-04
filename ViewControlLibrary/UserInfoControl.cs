@@ -19,6 +19,11 @@ namespace ViewControlLibrary
         {
             InitializeComponent();
 
+            InitializeBinding();
+        }
+
+        private void InitializeBinding()
+        {
             nameTextBox.DataBindings.Add("Text", _bindingSource, "Name");
             birthDateDateTimePicker.DataBindings.Add("Value", _bindingSource, "BirthDate");
             roleDropDownList.DataBindings.Add("SelectedValue", _bindingSource, "RoleId");
